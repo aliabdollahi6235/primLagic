@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimLagic — Intelligent Software for the Future</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        bgLight: '#F8F9FC', // Subtle light gray background
+                        darkText: '#1A1A1A', // Soft black
+                        mutedText: '#64748B',
+                        primaryAccent: '#3B82F6', // A base tech blue
+                        secondaryAccent: '#8B5CF6', // A base tech purple
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%)',
+                        'gradient-subtle': 'linear-gradient(180deg, rgba(255,255,255,0) 0%, #F8F9FC 100%)',
+                        'mesh-hero': 'radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.1) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(59, 130, 246, 0.1) 0px, transparent 50%)',
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 30px rgba(0, 0, 0, 0.05)',
+                        'glass-hover': '0 20px 40px rgba(59, 130, 246, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8F9FC;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F9FC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+
+        /* The base glass class */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        /* Gradient Text Utility */
+        .text-gradient {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Subtle mesh background for hero */
+        .hero-bg {
+            background-color: #F8F9FC;
+            background-image: radial-gradient(at 47% 33%, hsl(226.36, 100%, 88%) 0, transparent 59%), 
+                              radial-gradient(at 82% 65%, hsl(265.6, 100%, 89%) 0, transparent 55%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass py-4 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center text-white font-bold text-lg">P</div>
+                <span class="text-xl font-bold tracking-tight">PrimLagic</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-mutedText">
+                <a href="#home" class="hover:text-primaryAccent transition-colors">Home</a>
+                <a href="#products" class="hover:text-primaryAccent transition-colors">Products</a>
+                <a href="#services" class="hover:text-primaryAccent transition-colors">Services</a>
+                <a href="#about" class="hover:text-primaryAccent transition-colors">About</a>
+                <a href="#contact" class="hover:text-primaryAccent transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-flex px-5 py-2.5 bg-darkText text-white text-sm font-medium rounded-full hover:bg-primaryAccent transition-colors duration-300">
+                    Get Started
+                </a>
+                <button class="md:hidden text-2xl text-darkText">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden hero-bg">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="gsap-hero inline-block py-1 px-3 rounded-full bg-blue-100/50 text-primaryAccent text-sm font-semibold mb-6 border border-blue-200/50">
+                        Next-Generation Software Solutions
+                    </span>
+                    <h1 class="gsap-hero text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+                        Building Intelligent <br> 
+                        <span class="text-gradient">Software For The Future</span>
+                    </h1>
+                    <p class="gsap-hero text-lg md:text-xl text-mutedText max-w-2xl mx-auto mb-10 leading-relaxed">
+                        PrimLagic pioneers digital transformation through high-quality, scalable software, enterprise systems, and advanced AI solutions designed for the modern world.
+                    </p>
+                    <div class="gsap-hero flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#products" class="px-8 py-4 bg-gradient-primary text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2">
+                            View Our Products
+                            <i class="ph ph-arrow-right font-bold"></i>
+                        </a>
+                        <a href="#services" class="px-8 py-4 bg-white text-darkText font-semibold rounded-full border border-gray-200 hover:border-primaryAccent hover:text-primaryAccent transition-all duration-300">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gsap-hero-img mt-20 relative rounded-2xl overflow-hidden shadow-2xl border border-white/50 glass perspective-container">
+                     <img src="https://images.unsplash.com/photo-1642388862271-148645509551?q=80&w=2940&auto=format&fit=crop" alt="Dashboard Mockup" class="w-full h-auto transform hover:scale-105 transition-transform duration-700 rounded-2xl opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bgLight via-transparent to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-32 relative z-10">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="max-w-3xl mx-auto text-center mb-20 gsap-section-header">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Ecosystem of Products</h2>
+                    <p class="text-mutedText text-lg">Innovative SaaS platforms engineered for performance, scalability, and user experience.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+                    
+                    <div class="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group hover:shadow-glass-hover tilt-card">
+                        <div class="relative z-10 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-primaryAccent mb-6">
+                                    <i class="ph ph-chalkboard-teacher text-2xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">ClassBan</h3>
+                                <p class="text-mutedText text-lg max-w-md mb-8">
+                                    The next-generation Learning Management System (LMS). Revolutionizing education with AI-driven analytics, intuitive interfaces, and seamless collaboration tools.
+                                </p>
+                                 <a href="#" class="inline-flex items-center gap-2 text-primaryAccent font-semibold hover:gap-4 transition-all">
+                                    Learn More <i class="ph ph-arrow-right"></i>
+                                </a>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2940&auto=format&fit=crop" 
+                                 class="absolute bottom-0 right-0 w-3/5 md:w-1/2 rounded-tl-3xl shadow-2xl transform translate-y-12 translate-x-12 group-hover:translate-y-8 group-hover:translate-x-8 transition-transform duration-500 object-cover h-64 opacity-90" alt="ClassBan Dashboard">
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-glass-hover tilt-card">
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-secondaryAccent mb-6">
+                            <i class="ph ph-brain text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">PrimeAI Tools</h3>
+                        <p class="text-mutedText mb-6">
+                            A suite of modular AI API services for businesses, enabling predictive analytics, NLP, and automation integration.
+                        </p>
+                         <a href="#" class="inline-flex items-center gap-2 text-primaryAccent font-semibold hover:gap-4 transition-all">
+                            Explore AI <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-8 hover:shadow-glass-hover tilt-card">
+                        <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6">
+                            <i class="ph ph-cloud-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">PrimOS Cloud</h3>
+                        <p class="text-mutedText mb-6">
+                            Secure, scalable enterprise cloud infrastructure management and deployment services tailored for high-growth companies.
+                        </p>
+                         <a href="#" class="inline-flex items-center gap-2 text-primaryAccent font-semibold hover:gap-4 transition-all">
+                            View Services <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-32 bg-white/50 relative">
+             <div class="container mx-auto px-6 md:px-12">
+                <div class="max-w-3xl mx-auto text-center mb-20 gsap-section-header">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Expertise & Services</h2>
+                    <p class="text-mutedText text-lg">End-to-end digital solutions tailored to drive your business forward.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-primaryAccent/30 hover:shadow-xl transition-all duration-300 group">
+                        <i class="ph ph-code-block text-4xl text-primaryAccent mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-xl font-bold mb-3">Custom Software Dev</h4>
+                        <p class="text-mutedText leading-relaxed">Tailor-made software solutions architected for your specific business needs, ensuring scalability and security.</p>
+                    </div>
+                    <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-secondaryAccent/30 hover:shadow-xl transition-all duration-300 group">
+                        <i class="ph ph-palette text-4xl text-secondaryAccent mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-xl font-bold mb-3">UI/UX Design</h4>
+                        <p class="text-mutedText leading-relaxed">Creating intuitive, aesthetically pleasing, and user-centric interfaces that ensure high engagement and satisfaction.</p>
+                    </div>
+                    <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-blue-400/30 hover:shadow-xl transition-all duration-300 group">
+                        <i class="ph ph-device-mobile-camera text-4xl text-blue-400 mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-xl font-bold mb-3">Mobile App Dev</h4>
+                        <p class="text-mutedText leading-relaxed">Native and cross-platform mobile applications developed with Flutter and React Native for iOS and Android.</p>
+                    </div>
+                    <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-purple-400/30 hover:shadow-xl transition-all duration-300 group">
+                         <i class="ph ph-robot text-4xl text-purple-400 mb-6 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-xl font-bold mb-3">AI & ML Projects</h4>
+                        <p class="text-mutedText leading-relaxed">Leveraging the power of Artificial Intelligence and Machine Learning to automate processes and gain insights.</p>
+                    </div>
+                     <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-indigo-400/30 hover:shadow-xl transition-all duration-300 group">
+                        <i class="ph ph-plugs-connected text-4xl text-indigo-400 mb-6 group-hover:scale-110 transition-transform"></i>
+                       <h4 class="text-xl font-bold mb-3">API Development</h4>
+                       <p class="text-mutedText leading-relaxed">Robust, secure, and well-documented APIs to connect your systems and enable seamless data flow.</p>
+                   </div>
+                    <div class="gsap-service-card p-8 rounded-2xl border border-gray-100 bg-white hover:border-cyan-400/30 hover:shadow-xl transition-all duration-300 group">
+                        <i class="ph ph-chart-bar text-4xl text-cyan-400 mb-6 group-hover:scale-110 transition-transform"></i>
+                       <h4 class="text-xl font-bold mb-3">Enterprise Dashboards</h4>
+                       <p class="text-mutedText leading-relaxed">Data visualization tools that turn complex data into actionable insights for better decision-making.</p>
+                   </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="about" class="py-32 relative overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 gsap-about-text">
+                        <span class="text-primaryAccent font-semibold tracking-wider uppercase mb-4 block">About PrimLagic</span>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">We don't just write code, we define the future.</h2>
+                        <p class="text-mutedText text-lg leading-relaxed mb-6">
+                            PrimLagic was founded on a simple yet powerful idea: that software should not only be functional but intelligent, intuitive, and transformative. We are a team of innovators, engineers, and designers dedicated to pushing the boundaries of what's possible in the digital realm.
+                        </p>
+                        <p class="text-mutedText text-lg leading-relaxed mb-10">
+                            Our mission is to empower businesses with tools that are not just ahead of the curve, but define it. We value security, speed, and unwavering quality in every line of code we write.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-4xl font-bold text-darkText mb-2">99.9%</h4>
+                                <p class="text-mutedText">Uptime & Reliability</p>
+                            </div>
+                            <div>
+                                <h4 class="text-4xl font-bold text-darkText mb-2">Innovate</h4>
+                                <p class="text-mutedText">AI-Driven Core</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 gsap-about-img relative">
+                         <div class="absolute -inset-4 bg-gradient-primary opacity-20 blur-3xl rounded-[3rem] -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2940&auto=format&fit=crop" alt="PrimLagic Team collaboration" class="rounded-[2rem] shadow-2xl rotate-2 hover:rotate-0 transition-all duration-700 border-4 border-white/50">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section class="py-24 bg-darkText text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+             
+             <div class="container mx-auto px-6 md:px-12 text-center relative z-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-12 text-white/80">Powered by Modern Technologies</h2>
+                
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 gsap-tech-stack">
+                    <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-atom text-5xl text-blue-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">React / Next.js</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-file-css text-5xl text-teal-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">Tailwind CSS</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-database text-5xl text-green-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-brackets-curly text-5xl text-yellow-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">Python Django</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-stack text-5xl text-indigo-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">PostgreSQL</span>
+                    </div>
+                     <div class="flex flex-col items-center gap-3 group">
+                        <i class="ph ph-device-mobile text-5xl text-cyan-400 group-hover:text-white transition-colors"></i>
+                        <span class="font-semibold">Flutter</span>
+                    </div>
+                </div>
+             </div>
+         </section>
+
+
+        <section id="contact" class="py-32 relative">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="glass-card rounded-3xl p-8 md:p-16 overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-300/30 rounded-full filter blur-3xl mix-blend-multiply -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-300/30 rounded-full filter blur-3xl mix-blend-multiply translate-y-1/2 -translate-x-1/2"></div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        <div>
+                            <h2 class="text-4xl font-bold mb-6">Let's Build the Future Together</h2>
+                            <p class="text-mutedText text-lg mb-10">Have a project in mind or want to learn more about our products? Get in touch with our team of experts.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primaryAccent shadow-sm">
+                                        <i class="ph ph-envelope-simple text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-mutedText">Email Us</p>
+                                        <p class="font-semibold">hello@primlagic.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primaryAccent shadow-sm">
+                                        <i class="ph ph-map-pin text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-mutedText">Location</p>
+                                        <p class="font-semibold">Tech Hub Tower, International City</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 flex gap-4">
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-darkText hover:bg-primaryAccent hover:text-white transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-darkText hover:bg-primaryAccent hover:text-white transition-colors"><i class="ph ph-twitter-logo text-xl"></i></a>
+                                <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-darkText hover:bg-primaryAccent hover:text-white transition-colors"><i class="ph ph-github-logo text-xl"></i></a>
+                            </div>
+                        </div>
+
+                        <form class="bg-white/70 p-8 rounded-2xl border border-white/50 shadow-sm backdrop-blur-md">
+                            <div class="grid grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded-xl bg-bgLight border-transparent focus:border-primaryAccent focus:bg-white focus:ring-0 transition-all" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded-xl bg-bgLight border-transparent focus:border-primaryAccent focus:bg-white focus:ring-0 transition-all" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-bgLight border-transparent focus:border-primaryAccent focus:bg-white focus:ring-0 transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-4 bg-darkText text-white font-semibold rounded-xl hover:bg-primaryAccent transition-all duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t border-gray-200 bg-white/50">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-darkText rounded flex items-center justify-center text-white font-bold text-xs">P</div>
+                <span class="text-lg font-bold">PrimLagic</span>
+            </a>
+            <p class="text-mutedText text-sm">© 2024 PrimLagic. All rights reserved.</p>
+             <div class="flex gap-6 text-sm font-medium text-mutedText">
+                <a href="#" class="hover:text-darkText">Privacy Policy</a>
+                <a href="#" class="hover:text-darkText">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
